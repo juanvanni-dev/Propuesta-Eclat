@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta · Éclat Feria</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Tenor+Sans&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #080808;
+    --black-2: #111111;
+    --black-3: #181818;
+    --black-4: #222222;
+    --gold: #B8965A;
+    --gold-2: #D4AF72;
+    --gold-light: #E8D5A8;
+    --white: #F8F6F2;
+    --white-2: #EDE9E0;
+    --muted: #6B6560;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Tenor Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 999;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    justify-content: space-between;
+    position: relative; overflow: hidden;
+  }
+
+  .hero-top {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    padding: 48px 72px 0;
+    opacity: 0; animation: fadeIn 1s ease forwards 0.2s;
+  }
+
+  .hero-logo { font-family: 'Libre Baskerville', serif; font-size: 13px; letter-spacing: 6px; text-transform: uppercase; color: var(--gold); }
+  .hero-date { font-size: 11px; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; }
+
+  .hero-center {
+    text-align: center; padding: 60px 72px 0;
+    flex: 1; display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+  }
+
+  .hero-pre { font-size: 10px; letter-spacing: 6px; text-transform: uppercase; color: var(--gold); margin-bottom: 40px; opacity: 0; animation: fadeIn 1s ease forwards 0.5s; }
+
+  .hero-main { font-family: 'Libre Baskerville', serif; font-size: clamp(64px, 9vw, 130px); font-weight: 400; font-style: italic; line-height: 0.9; letter-spacing: -2px; color: var(--white); opacity: 0; animation: fadeIn 1.2s ease forwards 0.7s; }
+
+  .hero-sub { font-size: clamp(11px, 1.2vw, 14px); letter-spacing: 8px; text-transform: uppercase; color: var(--gold); margin-top: 32px; opacity: 0; animation: fadeIn 1s ease forwards 1s; }
+
+  .hero-divider { width: 1px; height: 80px; background: linear-gradient(to bottom, transparent, var(--gold), transparent); margin: 40px auto; opacity: 0; animation: fadeIn 1s ease forwards 1.2s; }
+
+  .hero-tagline { font-family: 'Libre Baskerville', serif; font-size: clamp(14px, 1.5vw, 18px); font-style: italic; color: var(--muted); max-width: 500px; line-height: 1.7; opacity: 0; animation: fadeIn 1s ease forwards 1.4s; }
+
+  .hero-bottom {
+    padding: 48px 72px;
+    display: flex; justify-content: space-between; align-items: flex-end;
+    border-top: 1px solid rgba(184,150,90,0.12);
+    opacity: 0; animation: fadeIn 1s ease forwards 1.6s;
+  }
+
+  .hbi { display: flex; flex-direction: column; gap: 6px; }
+  .hbi-label { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: var(--muted); }
+  .hbi-value { font-family: 'Libre Baskerville', serif; font-size: 15px; font-style: italic; color: var(--white-2); }
+
+  .gold-sep { height: 1px; background: linear-gradient(to right, transparent 0%, var(--gold) 20%, var(--gold-2) 50%, var(--gold) 80%, transparent 100%); }
+
+  /* SECTIONS */
+  section { padding: 120px 72px; }
+
+  .eyebrow { font-size: 9px; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; display: flex; align-items: center; gap: 20px; }
+  .eyebrow::after { content: ''; flex: 1; max-width: 60px; height: 1px; background: var(--gold); opacity: 0.4; }
+
+  .sec-title { font-family: 'Libre Baskerville', serif; font-size: clamp(40px, 4.5vw, 68px); font-weight: 400; line-height: 1.05; letter-spacing: -1px; max-width: 800px; margin-bottom: 24px; }
+  .sec-title em { font-style: italic; color: var(--gold-2); }
+  .sec-body { font-size: 15px; line-height: 2; color: var(--muted); max-width: 560px; letter-spacing: 0.3px; }
+
+  /* PROBLEMA */
+  .problema { background: var(--black); }
+
+  .pain-cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 80px; border: 1px solid rgba(184,150,90,0.1); }
+
+  .pain-col { padding: 48px 36px; border-right: 1px solid rgba(184,150,90,0.1); transition: background 0.4s; position: relative; overflow: hidden; }
+  .pain-col:last-child { border-right: none; }
+  .pain-col::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--gold); transform: scaleX(0); transition: transform 0.4s ease; transform-origin: left; }
+  .pain-col:hover::after { transform: scaleX(1); }
+  .pain-col:hover { background: rgba(184,150,90,0.03); }
+
+  .pain-num { font-family: 'Libre Baskerville', serif; font-size: 56px; font-style: italic; color: rgba(184,150,90,0.12); line-height: 1; margin-bottom: 28px; }
+  .pain-title { font-family: 'Libre Baskerville', serif; font-size: 19px; font-style: italic; color: var(--white-2); margin-bottom: 14px; line-height: 1.3; }
+  .pain-desc { font-size: 13px; color: var(--muted); line-height: 1.8; }
+
+  /* SOLUCIÓN */
+  .solucion { background: var(--black-2); }
+
+  .sol-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-top: 80px; align-items: start; }
+
+  .sol-feat { padding: 36px 0; border-bottom: 1px solid rgba(184,150,90,0.1); display: grid; grid-template-columns: 48px 1fr; gap: 24px; align-items: start; transition: padding-left 0.3s; }
+  .sol-feat:first-child { padding-top: 0; }
+  .sol-feat:last-child { border-bottom: none; }
+  .sol-feat:hover { padding-left: 8px; }
+  .sol-feat-num { font-family: 'Libre Baskerville', serif; font-size: 11px; font-style: italic; color: var(--gold); padding-top: 4px; }
+  .sol-feat-title { font-family: 'Libre Baskerville', serif; font-size: 21px; font-style: italic; color: var(--white); margin-bottom: 10px; }
+  .sol-feat-desc { font-size: 13px; color: var(--muted); line-height: 1.8; }
+
+  .sol-mockup { position: sticky; top: 48px; background: var(--black-3); border: 1px solid rgba(184,150,90,0.15); }
+  .mockup-bar { background: var(--black-4); padding: 14px 20px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(184,150,90,0.1); }
+  .m-dot { width: 9px; height: 9px; border-radius: 50%; }
+  .m-dot-r { background: #FF5F57; } .m-dot-y { background: #FEBC2E; } .m-dot-g { background: #28C840; }
+  .m-url { flex: 1; background: var(--black-3); padding: 4px 12px; font-size: 10px; color: var(--muted); font-family: monospace; border-radius: 2px; }
+  .mockup-body { padding: 28px; }
+  .mockup-ht { font-family: 'Libre Baskerville', serif; font-size: 11px; font-style: italic; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px; }
+  .m-card { border: 1px solid rgba(184,150,90,0.12); padding: 20px; margin-bottom: 10px; transition: border-color 0.3s; position: relative; }
+  .m-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: var(--gold); opacity: 0; transition: opacity 0.3s; }
+  .m-card:hover { border-color: rgba(184,150,90,0.3); }
+  .m-card:hover::before { opacity: 1; }
+  .m-cat { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+  .m-name { font-family: 'Libre Baskerville', serif; font-size: 17px; font-style: italic; color: var(--white); margin-bottom: 5px; }
+  .m-desc { font-size: 11px; color: var(--muted); line-height: 1.5; }
+  .m-links { display: flex; gap: 6px; margin-top: 12px; }
+  .m-link { font-size: 9px; letter-spacing: 1px; text-transform: uppercase; padding: 4px 10px; border: 1px solid rgba(184,150,90,0.2); color: var(--gold); }
+
+  /* PROCESO */
+  .proceso { background: var(--black); }
+
+  .proc-row { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 80px; border-top: 1px solid rgba(184,150,90,0.1); }
+  .proc-col { padding: 48px 40px 48px 0; border-right: 1px solid rgba(184,150,90,0.08); }
+  .proc-col:first-child { padding-left: 0; }
+  .proc-col:last-child { border-right: none; }
+  .proc-week { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+  .proc-title { font-family: 'Libre Baskerville', serif; font-size: 22px; font-style: italic; color: var(--white); margin-bottom: 14px; }
+  .proc-desc { font-size: 13px; color: var(--muted); line-height: 1.8; margin-bottom: 20px; }
+  .proc-tags { display: flex; flex-direction: column; gap: 6px; }
+  .proc-tag { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: rgba(184,150,90,0.6); padding-left: 12px; position: relative; }
+  .proc-tag::before { content: '—'; position: absolute; left: 0; color: var(--gold); font-size: 8px; }
+
+  /* INVERSIÓN */
+  .inversion { background: var(--black-2); }
+
+  .inv-wrap { display: grid; grid-template-columns: 1fr 1fr; margin-top: 80px; border: 1px solid rgba(184,150,90,0.12); }
+  .inv-left { padding: 64px 56px; border-right: 1px solid rgba(184,150,90,0.12); }
+  .inv-label { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 28px; display: block; }
+  .inv-price { font-family: 'Libre Baskerville', serif; font-size: 88px; font-style: italic; color: var(--white); line-height: 1; margin-bottom: 8px; }
+  .inv-note { font-size: 12px; color: var(--muted); margin-bottom: 48px; }
+  .inv-items { list-style: none; }
+  .inv-items li { padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 16px; }
+  .inv-items li:last-child { border-bottom: none; }
+  .inv-items li::before { content: '✦'; color: var(--gold); font-size: 10px; flex-shrink: 0; }
+
+  .inv-right { padding: 48px; display: flex; flex-direction: column; }
+  .inv-card { padding: 32px 0; border-bottom: 1px solid rgba(184,150,90,0.1); }
+  .inv-card:last-child { border-bottom: none; }
+  .inv-card-title { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  .inv-card-body { font-size: 13px; color: var(--muted); line-height: 1.9; }
+  .inv-card-small { font-size: 10px; color: rgba(107,101,96,0.6); margin-top: 8px; letter-spacing: 0.5px; }
+
+  /* CTA */
+  .cta { background: var(--black); padding: 160px 72px; text-align: center; position: relative; overflow: hidden; }
+  .cta::before { content: 'ÉCLAT'; position: absolute; font-family: 'Libre Baskerville', serif; font-size: 280px; font-style: italic; color: rgba(184,150,90,0.03); top: 50%; left: 50%; transform: translate(-50%, -50%); white-space: nowrap; pointer-events: none; letter-spacing: -8px; }
+  .cta-pre { font-size: 9px; letter-spacing: 6px; text-transform: uppercase; color: var(--gold); margin-bottom: 32px; }
+  .cta-title { font-family: 'Libre Baskerville', serif; font-size: clamp(44px, 6vw, 88px); font-style: italic; line-height: 1.05; letter-spacing: -1px; margin-bottom: 16px; }
+  .cta-sub { font-family: 'Libre Baskerville', serif; font-size: 18px; font-style: italic; color: var(--muted); margin-bottom: 64px; }
+  .cta-btns { display: flex; justify-content: center; align-items: center; gap: 24px; flex-wrap: wrap; }
+
+  .btn-gold { display: inline-block; background: var(--gold); color: var(--black); font-family: 'Tenor Sans', sans-serif; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; text-decoration: none; padding: 18px 48px; transition: background 0.3s, transform 0.2s; }
+  .btn-gold:hover { background: var(--gold-2); transform: translateY(-2px); }
+  .btn-outline { display: inline-block; border: 1px solid rgba(184,150,90,0.4); color: var(--gold); font-family: 'Tenor Sans', sans-serif; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; text-decoration: none; padding: 18px 48px; transition: border-color 0.3s, background 0.3s; }
+  .btn-outline:hover { border-color: var(--gold); background: rgba(184,150,90,0.05); }
+
+  /* FOOTER */
+  footer { background: var(--black); border-top: 1px solid rgba(184,150,90,0.1); padding: 40px 72px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer-name { font-family: 'Libre Baskerville', serif; font-size: 16px; font-style: italic; color: var(--white-2); }
+  .footer-name span { color: var(--gold); font-style: normal; }
+  .footer-info { font-size: 10px; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; }
+
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  /* PRINT */
+  @media print {
+    @page { size: A4 portrait; margin: 10mm 12mm; }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; animation: none !important; transition: none !important; }
+    body::before { display: none !important; }
+    .hero-top, .hero-pre, .hero-main, .hero-sub, .hero-divider, .hero-tagline, .hero-bottom { opacity: 1 !important; }
+    .hero { min-height: auto; page-break-after: always; }
+    .hero-center { padding: 32px 0; }
+    .hero-main { font-size: 72px !important; }
+    .hero-top, .hero-bottom { padding: 24px 40px; }
+    section { padding: 28px 40px; }
+    .sec-title { font-size: 30px !important; }
+    .problema, .solucion, .proceso, .inversion { page-break-before: always; }
+    .cta { page-break-before: always; padding: 40px; }
+    .pain-cols { grid-template-columns: 1fr 1fr; }
+    .pain-col { padding: 20px; page-break-inside: avoid; }
+    .sol-layout { grid-template-columns: 1fr; }
+    .sol-mockup { display: none; }
+    .proc-row { grid-template-columns: 1fr 1fr; }
+    .proc-col { padding: 20px; page-break-inside: avoid; }
+    .inv-wrap { grid-template-columns: 1fr 1fr; }
+    .inv-left { padding: 32px; }
+    .inv-price { font-size: 56px; }
+    .inv-right { padding: 28px; }
+    .cta::before { display: none; }
+    .cta-title { font-size: 42px; }
+    footer { padding: 20px 40px; }
+  }
+
+  @media (max-width: 900px) {
+    .hero-top, .hero-bottom, section, .cta, footer { padding-left: 28px; padding-right: 28px; }
+    .pain-cols { grid-template-columns: 1fr 1fr; }
+    .sol-layout { grid-template-columns: 1fr; }
+    .sol-mockup { display: none; }
+    .proc-row { grid-template-columns: 1fr 1fr; }
+    .inv-wrap { grid-template-columns: 1fr; }
+    .inv-left { border-right: none; border-bottom: 1px solid rgba(184,150,90,0.12); }
+  }
+
+  @media (max-width: 600px) {
+    .hero-main { font-size: 48px; }
+    .pain-cols, .proc-row { grid-template-columns: 1fr; }
+    .pain-col { border-right: none; border-bottom: 1px solid rgba(184,150,90,0.1); }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-top">
+    <div class="hero-logo">Éclat Feria</div>
+    <div class="hero-date">Propuesta · 2026</div>
+  </div>
+  <div class="hero-center">
+    <div class="hero-pre">Propuesta de Presencia Digital</div>
+    <h1 class="hero-main">Éclat</h1>
+    <div class="hero-sub">Moda · Home & Deco · Santa Fe</div>
+    <div class="hero-divider"></div>
+    <p class="hero-tagline">Una vitrina digital que mantiene viva la feria más exclusiva de la ciudad, los 365 días del año.</p>
+  </div>
+  <div class="hero-bottom">
+    <div class="hbi"><span class="hbi-label">Presentado a</span><span class="hbi-value">Éclat Feria</span></div>
+    <div class="hbi"><span class="hbi-label">Segmento</span><span class="hbi-value">Moda · Home & Deco</span></div>
+    <div class="hbi"><span class="hbi-label">Comunidad</span><span class="hbi-value">41.700 seguidores</span></div>
+    <div class="hbi"><span class="hbi-label">Por</span><span class="hbi-value">Juan Vanni</span></div>
+  </div>
+</section>
+
+<div class="gold-sep"></div>
+
+<section class="problema">
+  <div class="eyebrow">01 — El Problema</div>
+  <h2 class="sec-title">41.700 seguidores.<br><em>Ninguna presencia web.</em></h2>
+  <p class="sec-body">Éclat tiene la comunidad, el nombre y la ubicación más premium de la ciudad. Lo que le falta es el escaparate digital que esté a la altura.</p>
+  <div class="pain-cols">
+    <div class="pain-col">
+      <div class="pain-num">I</div>
+      <div class="pain-title">La feria dura 2 días</div>
+      <p class="pain-desc">Los feriantes tienen visibilidad solo durante el evento. El resto del año, sus clientes no los pueden encontrar ni contactar online.</p>
+    </div>
+    <div class="pain-col">
+      <div class="pain-num">II</div>
+      <div class="pain-title">Instagram no alcanza</div>
+      <p class="pain-desc">Con 41k seguidores hay base más que suficiente. Pero sin web propia, Éclat no aparece en Google y pierde tráfico orgánico todos los días.</p>
+    </div>
+    <div class="pain-col">
+      <div class="pain-num">III</div>
+      <div class="pain-title">Sin directorio unificado</div>
+      <p class="pain-desc">Cada feriante tiene su propio perfil disperso en internet. No existe un lugar que centralice toda la propuesta de valor de Éclat.</p>
+    </div>
+    <div class="pain-col">
+      <div class="pain-num">IV</div>
+      <div class="pain-title">Oportunidad de posicionarse</div>
+      <p class="pain-desc">Una web de calidad posiciona a Éclat como la referencia de moda y diseño premium en Santa Fe, atrayendo nuevos feriantes y compradores.</p>
+    </div>
+  </div>
+</section>
+
+<div class="gold-sep"></div>
+
+<section class="solucion">
+  <div class="eyebrow">02 — La Solución</div>
+  <h2 class="sec-title">La feria que<br><em>nunca cierra.</em></h2>
+  <p class="sec-body">Una plataforma digital donde cada feriante tiene su espacio permanente. Los compradores descubren marcas, exploran y conectan directamente — entre ferias y siempre.</p>
+  <div class="sol-layout">
+    <div>
+      <div class="sol-feat">
+        <div class="sol-feat-num">— i</div>
+        <div><div class="sol-feat-title">Perfil Digital por Feriante</div><p class="sol-feat-desc">Cada marca tiene su espacio: foto, descripción, categoría, redes sociales, link a tienda y contacto directo por WhatsApp o email.</p></div>
+      </div>
+      <div class="sol-feat">
+        <div class="sol-feat-num">— ii</div>
+        <div><div class="sol-feat-title">Directorio con Filtros</div><p class="sol-feat-desc">Navegación por categorías: Moda, Home & Deco, Accesorios. Los compradores encuentran lo que buscan en segundos.</p></div>
+      </div>
+      <div class="sol-feat">
+        <div class="sol-feat-num">— iii</div>
+        <div><div class="sol-feat-title">Calendario de Ediciones</div><p class="sol-feat-desc">Fechas, lugar y novedades de cada edición. También para comunicar pop-ups y eventos exclusivos.</p></div>
+      </div>
+      <div class="sol-feat">
+        <div class="sol-feat-num">— iv</div>
+        <div><div class="sol-feat-title">Panel de Gestión Propio</div><p class="sol-feat-desc">Éclat agrega feriantes, publica fechas y actualiza contenido de forma autónoma. Sin depender de nadie.</p></div>
+      </div>
+    </div>
+    <div class="sol-mockup">
+      <div class="mockup-bar">
+        <div class="m-dot m-dot-r"></div><div class="m-dot m-dot-y"></div><div class="m-dot m-dot-g"></div>
+        <div class="m-url">eclatferia.com/feriantes</div>
+      </div>
+      <div class="mockup-body">
+        <div class="mockup-ht">Feriantes · Primavera 2026</div>
+        <div class="m-card"><div class="m-cat">Moda · Destacada</div><div class="m-name">Atelier Maren</div><div class="m-desc">Indumentaria de autor con telas naturales y producción local consciente.</div><div class="m-links"><span class="m-link">Instagram</span><span class="m-link">Contacto</span></div></div>
+        <div class="m-card"><div class="m-cat">Home & Deco</div><div class="m-name">Casa Núcleo</div><div class="m-desc">Objetos de diseño para el hogar. Cerámica y madera artesanal.</div><div class="m-links"><span class="m-link">Tienda</span><span class="m-link">WhatsApp</span></div></div>
+        <div class="m-card"><div class="m-cat">Accesorios</div><div class="m-name">Dorado Salvaje</div><div class="m-desc">Joyería contemporánea elaborada a mano en plata y bronce.</div><div class="m-links"><span class="m-link">Instagram</span><span class="m-link">Contacto</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-sep"></div>
+
+<section class="proceso">
+  <div class="eyebrow">03 — El Proceso</div>
+  <h2 class="sec-title">Cuatro semanas.<br><em>Resultado real.</em></h2>
+  <p class="sec-body">Un proceso ordenado y sin sorpresas, con comunicación constante y entregas concretas en cada etapa.</p>
+  <div class="proc-row">
+    <div class="proc-col">
+      <div class="proc-week">Semana I</div>
+      <div class="proc-title">Estrategia & Concepto</div>
+      <p class="proc-desc">Reunión para definir identidad visual, estructura y objetivos. Análisis de referentes premium de moda y diseño.</p>
+      <div class="proc-tags"><span class="proc-tag">Reunión</span><span class="proc-tag">Identidad visual</span><span class="proc-tag">Arquitectura</span></div>
+    </div>
+    <div class="proc-col">
+      <div class="proc-week">Semana II</div>
+      <div class="proc-title">Diseño & Prototipo</div>
+      <p class="proc-desc">Diseño completo en sintonía con la estética de Éclat. Prototipo navegable para aprobar antes de programar.</p>
+      <div class="proc-tags"><span class="proc-tag">Diseño UI</span><span class="proc-tag">Prototipo</span><span class="proc-tag">Revisión</span></div>
+    </div>
+    <div class="proc-col">
+      <div class="proc-week">Semana III</div>
+      <div class="proc-title">Desarrollo & Carga</div>
+      <p class="proc-desc">Programación, carga inicial de feriantes y configuración del panel. Testing en móvil y desktop.</p>
+      <div class="proc-tags"><span class="proc-tag">Desarrollo</span><span class="proc-tag">CMS</span><span class="proc-tag">Testing</span></div>
+    </div>
+    <div class="proc-col">
+      <div class="proc-week">Semana IV</div>
+      <div class="proc-title">Lanzamiento</div>
+      <p class="proc-desc">Publicación, capacitación al equipo y soporte post-lanzamiento 30 días incluido sin costo adicional.</p>
+      <div class="proc-tags"><span class="proc-tag">Deploy</span><span class="proc-tag">Capacitación</span><span class="proc-tag">Soporte 30 días</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-sep"></div>
+
+<section class="inversion">
+  <div class="eyebrow">04 — La Inversión</div>
+  <h2 class="sec-title">Precio claro.<br><em>Sin sorpresas.</em></h2>
+  <div class="inv-wrap">
+    <div class="inv-left">
+      <span class="inv-label">Paquete Completo · Proyecto Único</span>
+      <div class="inv-price">A cotizar</div>
+      <div class="inv-note">Precio según escala del proyecto · Consulta sin compromiso</div>
+      <ul class="inv-items">
+        <li>Diseño editorial personalizado para Éclat</li>
+        <li>Desarrollo completo de la plataforma</li>
+        <li>Hasta 40 perfiles de feriantes en la carga inicial</li>
+        <li>Calendario de ediciones y novedades</li>
+        <li>Panel de administración autogestionable</li>
+        <li>Optimización SEO y adaptación móvil completa</li>
+        <li>Capacitación al equipo organizador</li>
+        <li>Soporte técnico 30 días post-lanzamiento</li>
+      </ul>
+    </div>
+    <div class="inv-right">
+      <div class="inv-card">
+        <div class="inv-card-title">¿Por qué vale la inversión?</div>
+        <p class="inv-card-body">Con 41k seguidores ya tenés la audiencia. La web convierte esa comunidad en tráfico real hacia los feriantes — todos los días del año, no solo los de feria.</p>
+      </div>
+      <div class="inv-card">
+        <div class="inv-card-title">Formas de pago</div>
+        <p class="inv-card-body">50% al inicio del proyecto y 50% en la entrega final. Posibilidad de acordar cuotas según el proyecto.</p>
+      </div>
+      <div class="inv-card">
+        <div class="inv-card-title">Mantenimiento Mensual · $75.000/mes</div>
+        <p class="inv-card-body">Incluye hosting, correcciones de seguridad y actualización de perfiles de feriantes cada 21 días.</p>
+        <div class="inv-card-small">* Precio sujeto a modificación sin previo aviso.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="cta-pre">¿Empezamos?</div>
+  <h2 class="cta-title">Dale a Éclat<br>la web que merece.</h2>
+  <p class="cta-sub">30 minutos son suficientes para definirlo todo.</p>
+  <div class="cta-btns">
+    <a href="https://wa.me/+5493426437777?text=Hola!%20Vi%20la%20propuesta%20para%20Eclat%20y%20me%20interesa%20charlar" class="btn-gold">Agendar una reunión</a>
+    <a href="mailto:juanjovanni16@gmail.com" class="btn-outline">Escribir por email</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-name">Juan Vanni<span>.</span></div>
+  <div class="footer-info">Diseño & Desarrollo Web · Santa Fe · 2026</div>
+</footer>
+
+<script>
+  const els = document.querySelectorAll('.pain-col, .sol-feat, .proc-col, .inv-card');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; }, i * 80);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  els.forEach(el => { el.style.opacity='0'; el.style.transform='translateY(12px)'; el.style.transition='opacity 0.7s ease, transform 0.7s ease'; obs.observe(el); });
+</script>
+</body>
+</html>
