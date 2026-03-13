@@ -1,39 +1,47 @@
-# Vitrina Digital de Emprendedores 🏪
+# Éclat — Digital Presence Proposal 🏷️
 
-A commercial proposal and interactive web presentation built for **CICE Santa Fe** — a platform concept that turns a chamber of commerce website into the central digital hub for the local entrepreneurial ecosystem.
+An interactive commercial proposal built for **Éclat Feria** — a premium fashion and home design fair based in Santa Fe, Argentina, with a community of 41,700 Instagram followers and zero web presence.
 
-**[→ Live Proposal](https://propuestas-webs.vercel.app/)**
+**[→ Live Proposal](https://propuesta-eclat.vercel.app/)**
 
 ---
 
 ## About This Project
 
-This is a fully designed and developed **commercial proposal** presented to CICE (Cámara de Industria, Comercio y Emprendedores de Santa Fe, Argentina).
+Éclat is one of the most recognized fashion and design fairs in Santa Fe — yet it had no website, no Google presence and no permanent digital space for its vendors.
 
-Instead of sending a static PDF, the proposal was built as an interactive web experience — demonstrating the product concept while showcasing the technical and design capabilities of the developer at the same time.
-
-The proposed platform would give each entrepreneur a digital profile, a searchable directory, a news & events section, and a self-managed admin panel — all under the chamber's brand.
+This proposal was designed and built as a **live interactive website** instead of a static PDF. The goal: let the client experience the quality of the final product before committing. The proposal itself becomes the pitch.
 
 ---
 
-## What It Includes
+## The Problem It Solves
+
+| Problem | Impact |
+|---|---|
+| 🗓️ The fair lasts only 2 days | Vendors have zero online visibility the rest of the year |
+| 📵 No web presence | Éclat doesn't appear on Google despite 41k followers |
+| 🔗 No unified directory | Each vendor's profile is scattered across the internet |
+| 📈 Missed organic traffic | A premium brand with no digital home loses potential buyers daily |
+
+---
+
+## Proposed Platform Features
+
+- **Vendor Profile Pages** — photo, description, category, social links, store link and direct WhatsApp/email contact
+- **Filtered Directory** — browse by category: Fashion, Home & Deco, Accessories
+- **Edition Calendar** — dates, location and updates for each fair edition and pop-up events
+- **Self-managed Admin Panel** — Éclat's team adds vendors and updates content independently
+
+---
+
+## What the Proposal Includes
 
 | Section | Description |
 |---|---|
-| 🔍 The Problem | Why entrepreneurs in the chamber are invisible online |
-| 💡 The Solution | 4 core features of the proposed platform |
-| 🗓️ The Process | 4-week delivery timeline with clear milestones |
-| 💰 The Investment | Transparent pricing and payment structure |
-| 📞 Call to Action | Direct WhatsApp and email contact |
-
----
-
-## Platform Features (Proposed)
-
-- **Entrepreneur Profile Pages** — logo, description, services, gallery, social links and direct contact
-- **Searchable Directory** — filter by industry, area or name
-- **News & Events Section** — centralized hub for activities, fairs and training
-- **Self-managed Admin Panel** — no technical knowledge required to update content
+| 01 — The Problem | Why 41k followers aren't enough without a web presence |
+| 02 — The Solution | 4 platform features with a live UI preview |
+| 03 — The Process | 4-week delivery timeline with clear deliverables |
+| 04 — The Investment | Transparent pricing, payment structure and monthly maintenance |
 
 ---
 
@@ -44,9 +52,10 @@ The proposed platform would give each entrepreneur a digital profile, a searchab
 ![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
-- Fully responsive — optimized for mobile and desktop
-- Smooth scroll animations and section transitions
-- No frameworks — pure HTML, CSS and vanilla JS
+- Editorial design aligned with Éclat's premium aesthetic
+- Fully responsive — mobile-first
+- Smooth scroll animations and transitions
+- Pure HTML, CSS and vanilla JS — no dependencies
 - Deployed on Vercel
 
 ---
@@ -54,10 +63,10 @@ The proposed platform would give each entrepreneur a digital profile, a searchab
 ## Delivery Timeline (Proposed)
 
 ```
-Week 1 — Discovery & Strategy     → Kickoff, wireframes, visual identity
-Week 2 — Design & Prototype       → Full UI design, navigable prototype
-Week 3 — Development & Content    → Build, CMS, initial data load (up to 50 profiles)
-Week 4 — Launch & Training        → Testing, deploy, team training, 30-day support
+Week 1 — Strategy & Concept    → Kickoff, visual identity, architecture
+Week 2 — Design & Prototype    → Full UI design aligned with Éclat's aesthetic
+Week 3 — Development & Load    → Build, CMS setup, initial vendor profiles (up to 40)
+Week 4 — Launch                → Deploy, team training, 30-day support included
 ```
 
 ---
@@ -66,7 +75,7 @@ Week 4 — Launch & Training        → Testing, deploy, team training, 30-day s
 
 A static document tells. An interactive experience shows.
 
-By presenting the proposal as a live website, the client can already feel the quality of the final product before saying yes. It also demonstrates a core principle: **every touchpoint with the client is an opportunity to show what you can do.**
+Presenting the proposal as a live website lets the client feel the quality of the product before saying yes — and demonstrates that every client touchpoint is an opportunity to deliver value.
 
 ---
 
