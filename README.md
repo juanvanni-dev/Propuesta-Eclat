@@ -1,99 +1,76 @@
-# Éclat Feria — Digital Presence Proposal
+# Vitrina Digital de Emprendedores 🏪
 
-A premium **web proposal concept** designed for *Éclat Feria*, a fashion and design event based in Santa Fe, Argentina.
+A commercial proposal and interactive web presentation built for **CICE Santa Fe** — a platform concept that turns a chamber of commerce website into the central digital hub for the local entrepreneurial ecosystem.
 
-This project presents the concept of a **digital platform that extends the visibility of the fair beyond the physical event**, allowing exhibitors to maintain an online presence all year round.
-
-The goal of this proposal is to demonstrate how **modern web design and development can transform a local event into a permanent digital marketplace.**
+**[→ Live Proposal](https://propuestas-webs.vercel.app/)**
 
 ---
 
-## 🌐 Project Concept
+## About This Project
 
-Éclat Feria currently has a strong community on social media, but no centralized web platform.
+This is a fully designed and developed **commercial proposal** presented to CICE (Cámara de Industria, Comercio y Emprendedores de Santa Fe, Argentina).
 
-This project proposes a solution:
+Instead of sending a static PDF, the proposal was built as an interactive web experience — demonstrating the product concept while showcasing the technical and design capabilities of the developer at the same time.
 
-* A **digital showcase for exhibitors**
-* A **directory of brands with filtering**
-* An **event calendar**
-* A **self-managed administration panel**
-
-The result is a platform that keeps the fair **active 365 days a year**, not just during the physical event.
+The proposed platform would give each entrepreneur a digital profile, a searchable directory, a news & events section, and a self-managed admin panel — all under the chamber's brand.
 
 ---
 
-## 🎯 Project Goals
+## What It Includes
 
-This project was created to demonstrate:
-
-* Modern **editorial web design**
-* **UX focused on discovery and browsing**
-* A **premium aesthetic for fashion and design brands**
-* How web platforms can support **local creative communities**
-
----
-
-## 🛠️ Technologies Used
-
-* HTML5
-* CSS3 (Custom Design System)
-* Vanilla JavaScript
-* Responsive Web Design
-* Google Fonts (Libre Baskerville / Tenor Sans)
+| Section | Description |
+|---|---|
+| 🔍 The Problem | Why entrepreneurs in the chamber are invisible online |
+| 💡 The Solution | 4 core features of the proposed platform |
+| 🗓️ The Process | 4-week delivery timeline with clear milestones |
+| 💰 The Investment | Transparent pricing and payment structure |
+| 📞 Call to Action | Direct WhatsApp and email contact |
 
 ---
 
-## 📸 Preview
+## Platform Features (Proposed)
 
-Add screenshots of the main sections:
+- **Entrepreneur Profile Pages** — logo, description, services, gallery, social links and direct contact
+- **Searchable Directory** — filter by industry, area or name
+- **News & Events Section** — centralized hub for activities, fairs and training
+- **Self-managed Admin Panel** — no technical knowledge required to update content
 
-* Hero section
-* Problem / Solution section
-* Exhibitor directory concept
-* Investment section
+---
 
-Example:
+## Tech Stack
+
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+
+- Fully responsive — optimized for mobile and desktop
+- Smooth scroll animations and section transitions
+- No frameworks — pure HTML, CSS and vanilla JS
+- Deployed on Vercel
+
+---
+
+## Delivery Timeline (Proposed)
 
 ```
-/screenshots/hero.png
-/screenshots/solution.png
-/screenshots/directory.png
+Week 1 — Discovery & Strategy     → Kickoff, wireframes, visual identity
+Week 2 — Design & Prototype       → Full UI design, navigable prototype
+Week 3 — Development & Content    → Build, CMS, initial data load (up to 50 profiles)
+Week 4 — Launch & Training        → Testing, deploy, team training, 30-day support
 ```
 
 ---
 
-## 🧠 Key Features
+## Why a Web Proposal Instead of a PDF?
 
-* Elegant **editorial layout**
-* Interactive sections with scroll animations
-* Responsive layout for desktop and mobile
-* Custom typography and visual hierarchy
-* Conceptual **directory interface for exhibitors**
+A static document tells. An interactive experience shows.
+
+By presenting the proposal as a live website, the client can already feel the quality of the final product before saying yes. It also demonstrates a core principle: **every touchpoint with the client is an opportunity to show what you can do.**
 
 ---
 
-## 🚀 Purpose of the Project
+## About
 
-This project is part of my **web development portfolio**, focused on creating modern websites for businesses, events and brands.
-
-It demonstrates my ability to:
-
-* design **high-end landing pages**
-* structure **business proposals through web design**
-* build responsive interfaces using **HTML, CSS and JavaScript**
-
----
-
-## 👨‍💻 Author
-
-Juan José Vanni
-Web Developer
-
-🌐 Portfolio
-https://juanjosevanni.vercel.app/
-
-📧 Contact
-[juanjovanni16@gmail.com](mailto:juanjovanni16@gmail.com)
-
-📍 Santa Fe, Argentina
+Built by [Juan José Vanni](https://juanjosevanni.vercel.app/) — Web Developer & Designer based in Santa Fe, Argentina.  
+Available for freelance projects · [juanjovanni16@gmail.com](mailto:juanjovanni16@gmail.com) · [linkedin.com/in/juanvanni](https://linkedin.com/in/juanvanni)
